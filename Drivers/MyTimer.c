@@ -9,7 +9,7 @@ void (*PIT4) (void);
 
 void MyTimer_Base_Init(TIM_TypeDef * Timer, unsigned short ARR, unsigned short PSC) {
 	
-	if (Timer == TIM1) {  //Le timer1 est sur APB2 et les autres sur APB1 (schéma)
+	if (Timer == TIM1) {  //Le timer1 est sur APB2 et les autres sur APB1 (schÃ©ma)
 		RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
 	}else if (Timer == TIM2) {
 		RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
@@ -19,8 +19,8 @@ void MyTimer_Base_Init(TIM_TypeDef * Timer, unsigned short ARR, unsigned short P
 		RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
 	}
 
-	Timer->ARR = (ARR); //ARR = valeur à partir de laquelle on réinitialise le compteur 
-	Timer->PSC = (PSC);  // PSC = régule l'horloge apparayée au timer 
+	Timer->ARR = (ARR); //ARR = valeur Ã  partir de laquelle on rÃ©initialise le compteur 
+	Timer->PSC = (PSC);  // PSC = rÃ©gule l'horloge apparayÃ©e au timer 
 	
 }
 
@@ -29,7 +29,7 @@ void MyTimer_ActiveIT (TIM_TypeDef * Timer, char Prio, void (*IT_function) (void
 	Timer->DIER |= (0x01);
 	
 	if (Timer == TIM1) { 
-		NVIC->IP[25] =Prio<<4; //on met la priorité à Prio
+		NVIC->IP[25] =Prio<<4; //on met la prioritÃ© Ã  Prio
 		NVIC->ISER[0] |= 0x01<<25; //set enable registers for interruptions
 		PIT1=IT_function;
 	}else if (Timer == TIM2) {
@@ -72,7 +72,7 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
 	Timer->CCER |= (1<<4*(Channel-1)); //on les active
 	if (Channel > 2){
 		Timer->CCMR2 &= ~(3<<8*(Channel - 3));
-		Timer->CCMR2 |= (96<<8*(Channel - 3));		//on met en output le 3 et le 4 (il faut mettre à 0 ce champ de bits)
+		Timer->CCMR2 |= (96<<8*(Channel - 3));		//on met en output le 3 et le 4 (il faut mettre Ã  0 ce champ de bits)
 	}else{
 		Timer->CCMR1 &= ~(3<<8*(Channel - 1));
 		Timer->CCMR1 |= (96<<8*(Channel - 1));		//on met en output le 1 et le 2
@@ -84,22 +84,24 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
 		}
 	}else if (Timer == TIM3) {
 		if (Channel == 1) {
-			MyGPIO_Init(GPIOB,4,AltOut_Ppull);
+			MyGPIO_Init(GPIOA,6,AltOut_Ppull);
 		}else if (Channel == 2) {
-			MyGPIO_Init(GPIOC,7,AltOut_Ppull);
+			MyGPIO_Init(GPIOA,7,AltOut_Ppull);
 		}
 	}else if (Timer == TIM2) {
 		if (Channel == 2) {
-			MyGPIO_Init(GPIOB,3,AltOut_Ppull);
+			MyGPIO_Init(GPIOA,1,AltOut_Ppull);
 		}else if (Channel ==3) {
-			MyGPIO_Init(GPIOB,10,AltOut_Ppull);
+			MyGPIO_Init(GPIOA,2,AltOut_Ppull);
+		}else if (Channel == 4) {
+			MyGPIO_Init(GPIOA,3,AltOut_Ppull);
 		}
 	}
 }
 
 void MyTimer_SetDutyCycle(TIM_TypeDef * Timer, char Channel, int Rapport) {
 	
-	int Cycle = (Rapport*(Timer->ARR))/100;
+	int Cycle = (Rapport*(Timer->ARR))/1000; //On divise par 1000 au lieu de par 100 pour avoir un rapport pour 1000 pour plus de prÃ©cisions
 	
 	if(Channel==1) {
 		Timer->CCR1 = Cycle;
@@ -111,3 +113,6 @@ void MyTimer_SetDutyCycle(TIM_TypeDef * Timer, char Channel, int Rapport) {
 		Timer->CCR4 = Cycle;
 	}
 }
+
+
+ 
