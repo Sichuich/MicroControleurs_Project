@@ -2,7 +2,9 @@
 #include "Driver_GPIO.h"
 #include "MyTimer.h"
 
+
 void Uart_init(USART_TypeDef * Uart, unsigned int baudrate){
+		int fPCLK;
 	if (Uart == USART1){
 		RCC -> APB2ENR |= RCC_APB2ENR_USART1EN;
 	} else if (Uart == USART2){
@@ -22,15 +24,14 @@ void Uart_init(USART_TypeDef * Uart, unsigned int baudrate){
 	//Uart-> CR3 |= USART_CR3_DMAT;
 	//bandrate Tx/Rx band = fCK/(16*USARTDIV)
 	//Uart -> BRR 
-	int fPCLK;	
+	
 	if (Uart == USART1){
 		fPCLK = 72000000;
 	} else {
 	  fPCLK = 36000000;
 	}
-	if (baudrate == 2400){
-	}
-	Uart->BRR = fPCLK / (16 * baudrate);
+
+	Uart->BRR = fPCLK / baudrate;
 	Uart-> CR1 |= USART_CR1_TE;	
 }
 
