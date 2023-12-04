@@ -2,8 +2,12 @@
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 
-//
-void commande(int Rapport);
+void RouteurInit(void);
 
-void RouteurInit();
+void RouteurSet(int i);
+
+void RouteurStart(void);
+
+
+
 
