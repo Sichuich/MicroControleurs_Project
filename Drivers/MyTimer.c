@@ -81,6 +81,8 @@ void MyTimer_PWM(TIM_TypeDef * Timer, char Channel){
 	if (Timer == TIM4){
 		if (Channel == 1) {
 			MyGPIO_Init(GPIOB,6,AltOut_Ppull);
+		}else if (Channel == 2) {
+			MyGPIO_Init(GPIOB,7,AltOut_Ppull);
 		}
 	}else if (Timer == TIM3) {
 		if (Channel == 1) {
@@ -114,6 +116,36 @@ void MyTimer_SetDutyCycle(TIM_TypeDef * Timer, char Channel, int Rapport) {
 	}
 }
 
+void MyTimer_Encoder(TIM_TypeDef * Timer){
+//On change le channel 1
+	Timer -> CCMR1 &= ~ (0x3);
+	Timer -> CCMR1 |= (0x01);		
+
+	//On change le channel 2
+	Timer -> CCMR1 &= ~ (0x3 << 8);
+	Timer -> CCMR1 |= (0x01 << 8);
+	
+
+	Timer -> CCER &= ~(0x01<<1);
+	Timer -> CCER &= ~(0x01<<5);	
+	if(Timer==TIM1){
+		Timer -> CCER &= ~(0x01<<3);
+		Timer -> CCMR1 &= ~(0x0F <<4);
+		Timer -> CCER &= ~(0x01<<3);
+		Timer -> CCMR1 &= ~(0x0F <<12);
+	}
+	Timer -> SMCR &= ~(0x07);
+	Timer -> SMCR |= (0x03);
+		
+}
+
+int MyTimer_Read_CNT(TIM_TypeDef * Timer){
+	return Timer -> CNT;
+}
+
+void MyTimer_Reset_CNT(TIM_TypeDef * Timer){
+	Timer -> CNT = 0;
+}
 
 
 

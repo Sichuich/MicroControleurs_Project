@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers</IncludePath>
+              <IncludePath>..\Drivers;..\Service</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,6 +388,21 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\Principal.c</FilePath>
             </File>
+            <File>
+              <FileName>girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>voile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\voile.c</FilePath>
+            </File>
+            <File>
+              <FileName>gestion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\gestion.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -397,6 +412,11 @@
               <FileName>Driver_GPIO.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Driver_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -741,7 +761,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers</IncludePath>
+              <IncludePath>..\Drivers;..\Service</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -790,6 +810,21 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\Principal.c</FilePath>
             </File>
+            <File>
+              <FileName>girouette.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\girouette.c</FilePath>
+            </File>
+            <File>
+              <FileName>voile.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\voile.c</FilePath>
+            </File>
+            <File>
+              <FileName>gestion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\gestion.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -799,6 +834,11 @@
               <FileName>Driver_GPIO.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Driver_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
