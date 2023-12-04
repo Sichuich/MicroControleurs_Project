@@ -34,15 +34,15 @@ void Uart_init(USART_TypeDef * Uart, unsigned int baudrate){
 	} else {
 	  fPCLK = 36000000;
 	}
-	if (baudrate == 2400){
-	}
+
 	Uart->BRR = fPCLK / ( baudrate);
-	Uart-> CR1 |= USART_CR1_TE;	
+	Uart-> CR1 |= (USART_CR1_RE | USART_CR1_TE);	
 }
 
 void Send(USART_TypeDef * Uart, char data){
+	while((Uart->SR & USART_SR_TXE)==0);
 	Uart->DR = data;
-	while(!(Uart->SR & USART_SR_TC));
+	
 }
 
 void Receive_Interruption(USART_TypeDef * usart, char priority,  void (*function) (void)){
