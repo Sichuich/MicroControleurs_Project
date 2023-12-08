@@ -418,6 +418,11 @@
               <FileType>1</FileType>
               <FilePath>..\Drivers\MyTimer.c</FilePath>
             </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Driver_UART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -839,6 +844,11 @@
               <FileName>MyTimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\MyTimer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Driver_UART.c</FilePath>
             </File>
           </Files>
         </Group>
