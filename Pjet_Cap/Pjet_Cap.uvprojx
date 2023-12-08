@@ -388,6 +388,16 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\Principal.c</FilePath>
             </File>
+            <File>
+              <FileName>cap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\cap.c</FilePath>
+            </File>
+            <File>
+              <FileName>cap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Service\cap.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -397,6 +407,16 @@
               <FileName>Driver_GPIO.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Driver_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Driver_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -741,7 +761,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers</IncludePath>
+              <IncludePath>..\Drivers;..\Service</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -790,6 +810,16 @@
               <FileType>1</FileType>
               <FilePath>.\Sources\Principal.c</FilePath>
             </File>
+            <File>
+              <FileName>cap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Service\cap.c</FilePath>
+            </File>
+            <File>
+              <FileName>cap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Service\cap.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -799,6 +829,16 @@
               <FileName>Driver_GPIO.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\Driver_GPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Driver_UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
