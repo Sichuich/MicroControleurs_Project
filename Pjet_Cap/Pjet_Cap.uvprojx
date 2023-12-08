@@ -384,19 +384,19 @@
           <GroupName>MesSources</GroupName>
           <Files>
             <File>
+              <FileName>Principal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\Principal.c</FilePath>
+            </File>
+            <File>
               <FileName>cap.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\cap.c</FilePath>
+              <FilePath>..\Service\cap.c</FilePath>
             </File>
             <File>
               <FileName>cap.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\cap.h</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>..\Service\cap.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -417,21 +417,6 @@
               <FileName>MyTimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\MyTimer.c</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_UART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Driver_UART.h</FilePath>
-            </File>
-            <File>
-              <FileName>MyTimer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\MyTimer.h</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_GPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Driver_GPIO.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -776,7 +761,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Drivers</IncludePath>
+              <IncludePath>..\Drivers;..\Service</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -821,19 +806,19 @@
           <GroupName>MesSources</GroupName>
           <Files>
             <File>
+              <FileName>Principal.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sources\Principal.c</FilePath>
+            </File>
+            <File>
               <FileName>cap.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\cap.c</FilePath>
+              <FilePath>..\Service\cap.c</FilePath>
             </File>
             <File>
               <FileName>cap.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\cap.h</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>..\Service\cap.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -854,21 +839,6 @@
               <FileName>MyTimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\MyTimer.c</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_UART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Driver_UART.h</FilePath>
-            </File>
-            <File>
-              <FileName>MyTimer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\MyTimer.h</FilePath>
-            </File>
-            <File>
-              <FileName>Driver_GPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Driver_GPIO.h</FilePath>
             </File>
           </Files>
         </Group>
