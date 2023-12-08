@@ -8,16 +8,25 @@ void Receive(void){
 	data = Uart_Get(USART1);
 }*/
 
-void RouteurInit(void){
+void RouteurInit1(void){
+	Uart_init(USART2,9600);
 		MyGPIO_Init(GPIOA,9,AltOut_Ppull);//tx
 	MyGPIO_Init(GPIOA,10,In_Floating);//rx
+	  
+	  //MyGPIO_Init(GPIOA, 5, Out_Ppull);// 
+	
+	 
+	 //Receive_Interruption(USART2,1,Receive);	
+}
+
+void RouteurInit2(void){		
 	  
 	  MyGPIO_Init(GPIOA, 5, Out_Ppull);//
 	   MyTimer_Base_Init(TIM3, 3599, 1);	
     MyTimer_PWM(TIM3, 1);
  
 	
-	 Uart_init(USART2,9600);
+	
 	 //Receive_Interruption(USART2,1,Receive);	
 }
 
@@ -30,7 +39,7 @@ void RouteurSet(int i){
 	} else {
      MyGPIO_Reset(GPIOA, 6);
   }					
-    MyTimer_SetDutyCycle(TIM3, 1, i);
+    MyTimer_SetDutyCycle(TIM3, 1, i*10);
 }
 void RouteurStart(void){
 	 MyTimer_Base_Start(TIM3);

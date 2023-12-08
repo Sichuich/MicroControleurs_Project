@@ -5,7 +5,9 @@
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 
-void RouteurInit(void);
+void RouteurInit1(void);
+
+void RouteurInit2(void);
 
 void RouteurSet(int i);
 
