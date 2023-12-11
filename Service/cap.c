@@ -2,24 +2,26 @@
 #include "cap.h"
 #include "Driver_UART.h"
 
-/*uint8_t data;
+int received_data;
 
 void Receive(void){
-	data = Uart_Get(USART1);
-}*/
+	received_data = Uart_Get(USART1);
+	Send(USART1, received_data);
+}
 
-void RouteurInit1(void){
-	Uart_init(USART2,9600);
+
+void UsartInit(void){
+	Uart_init(USART1,9600);
 		MyGPIO_Init(GPIOA,9,AltOut_Ppull);//tx
 	MyGPIO_Init(GPIOA,10,In_Floating);//rx
 	  
 	  //MyGPIO_Init(GPIOA, 5, Out_Ppull);// 
 	
 	 
-	 //Receive_Interruption(USART2,1,Receive);	
+	 Receive_Interruption(USART1,8,Receive);	
 }
 
-void RouteurInit2(void){		
+void MoteurInit(void){		
 	  
 	  MyGPIO_Init(GPIOA, 5, Out_Ppull);//
 	   MyTimer_Base_Init(TIM3, 3599, 1);	
@@ -32,17 +34,21 @@ void RouteurInit2(void){
 
 
 
-void RouteurSet(int i){		
-	if (i < 0) {
-     MyGPIO_Set(GPIOA, 6);
-		 i = -i ; 
+void MoteurSet(int i){		
+	if (i < 128) {
+     MyGPIO_Reset(GPIOA, 5);
+		 //i = -i ; 
 	} else {
-     MyGPIO_Reset(GPIOA, 6);
+     MyGPIO_Set(GPIOA, 5);
+			i ^= 255;
   }					
     MyTimer_SetDutyCycle(TIM3, 1, i*10);
 }
-void RouteurStart(void){
+void MoteurStart(void){
 	 MyTimer_Base_Start(TIM3);
 }
 
+void data(void){
+	MoteurSet(received_data);
+}
 

@@ -11,6 +11,6 @@ void Send(USART_TypeDef * Uart, char data);
 
 void Receive_Interruption(USART_TypeDef * usart, char priority,  void (*function) (void));
 
-char Uart_Get(USART_TypeDef * usart);
+int Uart_Get(USART_TypeDef * usart);
 
 #endif

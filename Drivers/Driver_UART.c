@@ -62,7 +62,7 @@ void Receive_Interruption(USART_TypeDef * usart, char priority,  void (*function
     usart->CR1 |= (USART_CR1_RXNEIE | USART_CR1_PEIE);
 }
 
-char Uart_Get(USART_TypeDef * usart){
+int Uart_Get(USART_TypeDef * usart){
 	return usart -> DR;
 }
 

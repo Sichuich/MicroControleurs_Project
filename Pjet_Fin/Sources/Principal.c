@@ -8,27 +8,21 @@
 
 
 
-char received_data;
-
-void Receive(void){
-	received_data = Uart_Get(USART1);
-	Send(USART1, received_data);
-}
 
 
 
 
 int main(void) {
 	
-    RouteurInit1();
-	  Receive_Interruption(USART1,8,Receive);  
+    UsartInit();
+	    
 	  	
-	  RouteurInit2();
-	  RouteurStart();
+	  MoteurInit();
+	  MoteurStart();
 		initialisation();
     
     while (1) { 
-   	  RouteurSet(received_data);   
+   	  data();   
 			controle_voile();
     }
 }

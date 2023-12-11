@@ -5,12 +5,14 @@
 #include "MyTimer.h"
 #include "Driver_GPIO.h"
 
-void RouteurInit1(void);
+void UsartInit(void);
 
-void RouteurInit2(void);
+void MoteurInit(void);
 
-void RouteurSet(int i);
+void MoteurSet(int i);
 
-void RouteurStart(void);
+void MoteurStart(void);
+
+void data(void);
 
 #endif
